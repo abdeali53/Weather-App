@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">Next {{dailyWeather.length}} Days</div>
+    <ul class="list-group list-group-flush">
+      @for (item of dailyWeather; track $index) {
+        <li class="list-group-item">
+          <div class="row">
+              <div class="col-lg-2">
+                  <img src="https://openweathermap.org/img/wn/{{item.icon}}@2x.png" alt="Cloud Image">
+              </div>
+              <div class="col-lg-8">
+                  <h3>{{item.dt*1000 | date : 'EE, MMMM d'}}</h3>
+                  <span>{{item.summary}}</span>
+              </div>
+              <div class="col-lg-2">
+                  <span style="padding-right:10px ;">{{item.temp.max | kelvinToTemperature:'C' | number: '1.0-0' }}&deg;</span>
+                  
+                  <span>{{item.temp.min | kelvinToTemperature:'C' | number: '1.0-0'}}&deg;</span>
+              </div>
+          </div>
+  
+        </li>
+      }
+    </ul>
+  </div>

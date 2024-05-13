@@ -1,0 +1,18 @@
+<div class="header">
+  <span>Simple Weather </span>
+  <div>
+    <form style="display: flex;
+    float: right;
+    margin-top: -50px;">
+      <input type="text" placeholder="Search for a City" [formControl]="control" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <!-- @for (city of filteredCities | async; track city) { -->
+        <mat-option *ngFor="let city of filteredCities$ | async" [value]="city">{{city}}</mat-option>
+        <!-- } -->
+      </mat-autocomplete>
+      <span class="bi bi-search" style="float: right;" (click)="searchCity()"></span>
+    </form>
+  </div>
+
+
+</div>

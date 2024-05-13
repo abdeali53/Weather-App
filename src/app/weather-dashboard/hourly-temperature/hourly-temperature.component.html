@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">Next Hours</div>
+    <div class="card-body">
+        <div class="container">
+            <div class="row flex-nowrap overflow-auto">
+                @for (item of hourlyWeather; track item.dt) {
+
+                <div class="col-lg-3" style="margin-top: auto;margin-bottom: auto;text-align: center;">
+                    <p>{{item.temperature | kelvinToTemperature : 'C'}}&deg;</p>
+                    <p>{{item.humidity}}%</p>
+                    <img src="https://openweathermap.org/img/wn/{{item.icon}}@2x.png" alt="Cloud Image">
+                    <p>{{item.dt*1000 | date:'h:mm a'}}</p>
+                </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+</div>
