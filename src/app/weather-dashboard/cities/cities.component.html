@@ -11,7 +11,7 @@
   <div class="row" *ngIf="(cityWeatherData$ | async) as cityWeatherNew">
 
     <div class="col-xs-12"><app-hourly-temperature
-        [hourlyWeather]="cityWeatherNew.hourlyWeather"></app-hourly-temperature></div>
+        [hourlyWeather]="cityWeatherNew.hourlyWeather.slice(0,8)"></app-hourly-temperature></div>
     <div class="col-xs-12"><app-daily-temperature [dailyWeather]="cityWeatherNew.dailyWeather"></app-daily-temperature>
     </div>
   </div>
