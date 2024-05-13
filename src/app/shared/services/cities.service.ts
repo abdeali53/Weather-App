@@ -13,7 +13,7 @@ export class CitiesService {
   cities = ["Rio de Janeiro", "Beijing", "Los Angeles"];
   APIKey = "9aab3f9a7ddd2b6b438674e97e59a57e";
   getCityGeoLocation(city: string) {
-    return this.httpClient.get("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + this.APIKey)
+    return this.httpClient.get("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=" + this.APIKey)
       .pipe(map((response: any) => { return { lat: response[0].lat, lon: response[0].lon } as GeoLocation }))
   }
 
